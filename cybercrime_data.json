@@ -1,0 +1,110 @@
+{
+  "users": {
+    "1": {
+      "user_id": 1,
+      "name": "Admin Officer",
+      "email": "lj@gmail.com",
+      "password_hash": "e86f78a8a3caf0b60d8e74e5942aa6d86dc150cd3c03338aef25b7d2d7e3acc7",
+      "mobile": "9876543210",
+      "gender": "Male",
+      "city": "Mumbai",
+      "address": "Cyber Cell HQ, Mumbai",
+      "role": "admin",
+      "police_id": "POL-18962",
+      "captcha": "C2HQSV",
+      "captcha_expiry": "2026-02-19T08:55:12.524592",
+      "is_verified": true
+    },
+    "2": {
+      "user_id": 2,
+      "name": "Harsh Patel",
+      "email": "hp280207@gmail.com",
+      "password_hash": "fdf6468dcec5df44971b5c4d5e8175d80a887221e40e881daf92a38b04495964",
+      "mobile": "8849996195",
+      "gender": "Male",
+      "city": "Dhanala",
+      "address": "Dhanala",
+      "role": "citizen",
+      "police_id": null,
+      "captcha": "2AQDLV",
+      "captcha_expiry": "2026-02-18T14:03:25.260365",
+      "is_verified": true
+    },
+    "3": {
+      "user_id": 3,
+      "name": "poojan",
+      "email": "poojan@gmail.com",
+      "password_hash": "a2975d4b9f85b02ce7f02c3dafaa4f43b652176b3de5761063deed2ff4f5e7dc",
+      "mobile": "1234567890",
+      "gender": "Male",
+      "city": "amreli",
+      "address": "Dhanala",
+      "role": "citizen",
+      "police_id": null,
+      "captcha": "8KH0RQ",
+      "captcha_expiry": "2026-02-18T14:21:33.999072",
+      "is_verified": true
+    }
+  },
+  "complaints": {
+    "CYB-2026-000001": {
+      "complaint_id": "CYB-2026-000001",
+      "complaint_number": 1,
+      "user_id": 2,
+      "_crime_type": "Identity Theft",
+      "_description": "FGHJKGFC",
+      "_location": "GFDFGHJ",
+      "_date": "2021-01-01",
+      "_latitude": 19.076,
+      "_longitude": 72.8777,
+      "_financial_loss": 100000.0,
+      "_severity": 9,
+      "status": "Under Investigation",
+      "_assigned_officer": "poojan",
+      "_assigned_police_station": "Delhi Cyber Unit",
+      "_evidence_files": []
+    },
+    "CYB-2026-000002": {
+      "complaint_id": "CYB-2026-000002",
+      "complaint_number": 2,
+      "user_id": 3,
+      "_crime_type": "Cyberbullying",
+      "_description": "dfgyhj",
+      "_location": "lkgfdx",
+      "_date": "2026-02-18",
+      "_latitude": 19.076,
+      "_longitude": 72.8777,
+      "_financial_loss": 10000000.0,
+      "_severity": 6,
+      "status": "Pending",
+      "_assigned_officer": null,
+      "_assigned_police_station": null,
+      "_evidence_files": [
+        "BS @ Glance.pdf"
+      ]
+    },
+    "CYB-2026-000003": {
+      "complaint_id": "CYB-2026-000003",
+      "complaint_number": 3,
+      "user_id": 3,
+      "_crime_type": "Online Fraud",
+      "_description": "DF",
+      "_location": "WERF",
+      "_date": "2026-02-18",
+      "_latitude": 19.076,
+      "_longitude": 72.8777,
+      "_financial_loss": 3000.0,
+      "_severity": 8,
+      "status": "Pending",
+      "_assigned_officer": null,
+      "_assigned_police_station": null,
+      "_evidence_files": [
+        "Fp.html"
+      ]
+    }
+  },
+  "counters": {
+    "user_counter": 4,
+    "complaint_counter": 3
+  }
+}
