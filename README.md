@@ -1,118 +1,56 @@
-# sem-III_python_projects
-
 # 🛡️ Cyber Crime Reporting and Analysis System
 
-A **Python and Streamlit-based Cyber Crime Reporting and Analysis System** designed to provide a simple platform for citizens to report cyber crimes and for administrators/police officers to manage, investigate, and analyze complaints.
+A web-based **Cyber Crime Reporting and Analysis System** developed using **Python and Streamlit**.
 
-The system includes user authentication, CAPTCHA verification, complaint tracking, automatic crime severity assignment, police station assignment, evidence management, and interactive crime analytics.
+The system provides an easy platform for citizens to register, report cybercrime incidents, upload evidence, and track complaints. Police/Admin users can manage complaints, assign cases, update case status, and analyze cybercrime data using interactive dashboards.
 
 ---
 
 ## 📌 Project Overview
 
-Cybercrime is increasing rapidly, and managing cybercrime complaints manually can be time-consuming and difficult to track.
+Cybercrime such as online fraud, hacking, phishing, identity theft, ransomware, and data breaches is increasing rapidly.
 
-This project provides a centralized web-based system where:
+Many victims hesitate to report cybercrime because traditional reporting processes can be complicated and time-consuming.
 
-* Citizens can register and securely log in.
-* Users can report cybercrime incidents.
-* Each complaint receives a unique sequential complaint ID.
-* Crime severity is automatically assigned according to the crime type.
-* Users can upload supporting evidence.
-* Administrators can review and manage complaints.
-* Police officers/stations can be assigned to cases.
-* Administrators can update complaint status.
-* Crime statistics can be visualized through interactive charts.
-* Users can recover forgotten passwords/emails.
+This project provides a simple **24/7 online cybercrime reporting platform** where users can report incidents and police/admin users can manage and analyze reported cases.
 
-The application is built using **Python, Streamlit, Pandas, Plotly, and JSON file storage**.
+### 👤 Citizens
 
----
+Citizens can:
 
-## ✨ Features
+- Register an account
+- Verify CAPTCHA
+- Login securely
+- Report cybercrime
+- Enter crime details
+- Provide GPS location
+- Upload evidence
+- Track complaint status
 
-### 👤 User Registration
+### 👮 Police / Admin
 
-Users can create an account by providing:
+Police/Admin users can:
 
-* Full Name
-* Email
-* Mobile Number
-* Gender
-* City
-* Address
-* Password
-* Confirm Password
-
-The system validates email, mobile number, and password requirements during registration.
-
-### 🔐 Authentication & Security
-
-The project provides:
-
-* Login system
-* Password hashing using SHA-256
-* CAPTCHA verification
-* CAPTCHA expiry
-* Password strength validation
-* Forgot Password functionality
-* Forgot Email functionality
-
-CAPTCHA codes are generated using Python's `random` module and contain six alphanumeric characters.
+- View complaints
+- Sort cases by priority
+- Assign Police ID
+- Update complaint status
+- Manage investigations
+- View analytics
+- Analyze crime trends
 
 ---
 
-## 📝 Cyber Crime Complaint System
+# ✨ Key Features
 
-Citizens can submit complaints by entering:
+## 🆔 1. Unique Complaint ID
 
-* Crime Type
-* Incident Description
-* Location
-* Date of Incident
-* Financial Loss
-* Latitude
-* Longitude
-* Supporting Evidence
+Every complaint receives a unique ID.
 
-The system supports crime categories such as:
-
-* Online Fraud
-* Hacking
-* Identity Theft
-* Phishing
-* Cyberbullying
-* Data Breach
-* Ransomware
-* Social Media Crime
-
----
-
-## 🎯 Automatic Severity Assignment
-
-The system automatically assigns a severity level from **1–10** according to the selected crime type.
-
-| Crime Type         | Severity |
-| ------------------ | -------: |
-| Online Fraud       |        8 |
-| Hacking            |        9 |
-| Identity Theft     |        9 |
-| Phishing           |        7 |
-| Cyberbullying      |        6 |
-| Data Breach        |       10 |
-| Ransomware         |       10 |
-| Social Media Crime |        5 |
-
-These severity mappings are defined directly in the application.
-
----
-
-## 🆔 Complaint Tracking
-
-Every complaint receives a sequential ID in the following format:
+Format:
 
 ```text
-CYB-YYYY-NNNNNN
+CYB-YYYY-000001
 ```
 
 Example:
@@ -123,107 +61,30 @@ CYB-2026-000002
 CYB-2026-000003
 ```
 
-This makes individual complaints easier to identify and track.
+This makes every complaint easy to track.
 
 ---
 
-## 📍 Location & Maps
+## 🎯 2. Automatic Severity Score
 
-Users can provide geographical coordinates for a reported incident.
+The system automatically assigns a severity score between **1 and 10** according to the selected crime type.
 
-The application displays the selected location using Streamlit's map component.
-
-```text
-Latitude
-Longitude
-     ↓
-Map Preview
-```
-
-This helps administrators understand the geographical location associated with a complaint.
-
----
-
-## 📎 Evidence Management
-
-Users can upload multiple supporting files such as:
-
-* Screenshots
-* Documents
-* Other digital evidence
-
-The uploaded filenames are associated with the complaint for tracking purposes.
+| Crime Type | Severity | Level |
+|---|---:|---|
+| Data Breach | 10/10 | Critical |
+| Ransomware | 10/10 | Critical |
+| Hacking | 9/10 | Critical |
+| Identity Theft | 9/10 | Critical |
+| Online Fraud | 8/10 | High |
+| Phishing | 7/10 | High |
+| Cyberbullying | 6/10 | Medium |
+| Social Media Crime | 5/10 | Medium |
 
 ---
 
-## 👮 Admin Dashboard
+# 🚨 3. Smart Priority Algorithm
 
-Administrators can manage all complaints from a centralized dashboard.
-
-Admin features include:
-
-* View all complaints
-* View complainant details
-* Filter complaints
-* Sort complaints
-* Assign officers
-* Assign police stations
-* Update complaint status
-* View complaint severity
-* View financial loss
-* View evidence count
-
-Supported complaint statuses include:
-
-```text
-Pending
-Under Investigation
-Resolved
-Closed
-```
-
----
-
-## 🏢 Police Station Management
-
-The system contains predefined police stations:
-
-| ID    | Police Station         | Location  |
-| ----- | ---------------------- | --------- |
-| PS001 | Cyber Cell HQ          | Mumbai    |
-| PS002 | Delhi Cyber Unit       | Delhi     |
-| PS003 | Bangalore Tech Crime   | Bangalore |
-| PS004 | Chennai Cyber Division | Chennai   |
-| PS005 | Kolkata Digital Crime  | Kolkata   |
-
-Each station has an associated priority weight used by the project configuration.
-
----
-
-## 📊 Crime Analytics
-
-The administrator can access an analytics dashboard containing:
-
-### Overview Metrics
-
-* Total Complaints
-* Resolved Complaints
-* Pending Complaints
-* Complaints Under Investigation
-
-### Interactive Charts
-
-* Complaint Status Distribution
-* Crime Type Distribution
-* Severity Distribution
-
-The project uses **Plotly** to generate interactive charts.
-
----
-
-## 🧮 Case Priority Algorithm
-
-The project includes a case priority algorithm to calculate the priority of a complaint.
+The system calculates a priority score to determine which cases require more immediate attention.
 
 ### Formula
 
@@ -235,49 +96,236 @@ Priority =
 + (Financial Loss × 0.1)
 ```
 
-The resulting score is used to classify cases as:
+### Weight Distribution
 
-|   Score | Priority    |
-| ------: | ----------- |
-|    8–10 | 🔴 Critical |
-|  6–7.99 | 🟠 High     |
-|  4–5.99 | 🟡 Medium   |
-| Below 4 | 🟢 Low      |
+| Factor | Weight |
+|---|---:|
+| Severity | 40% |
+| Evidence | 30% |
+| Time Pending | 20% |
+| Financial Loss | 10% |
 
-The algorithm uses severity, evidence count, pending time, and financial loss as factors.
+### Priority Levels
 
----
-
-## 🔒 Cyber Safety Tips
-
-The application provides users with basic cybersecurity awareness tips covering:
-
-* Password Security
-* Phishing Prevention
-* Social Media Safety
-* Online Shopping Security
-
-Examples include using strong passwords, enabling 2FA, avoiding suspicious links, checking HTTPS, and using trusted payment methods.
+| Score | Priority |
+|---:|---|
+| ≥ 8 | 🔴 Critical |
+| ≥ 6 | 🟠 High |
+| ≥ 4 | 🟡 Medium |
+| < 4 | 🟢 Low |
 
 ---
 
-# 🛠️ Technology Stack
+# 🔐 4. Security Features
 
-| Technology  | Purpose                        |
-| ----------- | ------------------------------ |
-| Python      | Core programming language      |
-| Streamlit   | Web application interface      |
-| Pandas      | Data processing                |
-| NumPy       | Numerical operations           |
-| Plotly      | Interactive data visualization |
-| JSON        | Data storage                   |
-| hashlib     | Password hashing               |
-| Regex       | Input validation               |
-| Random      | CAPTCHA generation             |
-| Dataclasses | Data models                    |
-| Collections | Complaint analytics            |
+The application includes several security mechanisms.
 
-The main application imports and uses these Python libraries directly.
+### CAPTCHA Verification
+
+- 6-character alphanumeric CAPTCHA
+- Uses uppercase letters and numbers
+- CAPTCHA expires after 5 minutes
+- Used during registration, login, and password recovery
+
+### Password Security
+
+Passwords are protected using:
+
+```text
+SHA-256 Hashing
+```
+
+### Password Rules
+
+A valid password must contain:
+
+- Minimum 8 characters
+- At least 1 uppercase letter
+- At least 1 number
+- At least 1 special character
+
+### Email Validation
+
+Email addresses are validated using Regular Expressions.
+
+### Police ID
+
+Police/Admin users receive a unique Police ID such as:
+
+```text
+POL-XXXXX
+```
+
+---
+
+# 🔑 5. Forgot Password System
+
+The system provides a secure three-step password recovery process:
+
+```text
+Email
+  ↓
+CAPTCHA Verification
+  ↓
+Set New Password
+```
+
+This allows users to recover their account without exposing their existing password.
+
+---
+
+# 📍 6. GPS Location
+
+Citizens can provide the geographical location of a cybercrime incident using:
+
+```text
+Latitude
+Longitude
+```
+
+The location is displayed using Streamlit's interactive map functionality.
+
+---
+
+# 📎 7. Evidence Upload
+
+Users can upload supporting evidence such as:
+
+- Screenshots
+- Documents
+- Images
+- Other digital evidence
+
+The number of uploaded evidence files contributes to the case priority score.
+
+---
+
+# 👮 Police Dashboard
+
+The Police/Admin dashboard allows authorized users to manage cybercrime cases.
+
+### Dashboard Functions
+
+- View all complaints
+- Sort cases according to priority
+- View complaint details
+- Assign Police ID
+- Update complaint status
+- Track investigations
+- Analyze crime statistics
+
+### Case Status
+
+```text
+Pending
+    ↓
+Under Investigation
+    ↓
+Resolved
+    ↓
+Closed
+```
+
+Police/Admin users can prioritize cases using the calculated priority score.
+
+---
+
+# 📊 Analytics Dashboard
+
+The project provides an interactive analytics dashboard using **Plotly**.
+
+### Dashboard Statistics
+
+The dashboard can display:
+
+- Total Complaints
+- Resolved Cases
+- Critical Cases
+- Average Priority
+- Total Financial Loss
+- Crime Type Distribution
+- Case Status Distribution
+- Severity Distribution
+- Crime Timeline
+- Financial Loss by Crime Type
+
+### Visualizations
+
+The system uses interactive:
+
+- Bar Charts
+- Pie Charts
+- Line Charts
+- Histograms
+
+---
+
+# 🔄 System Workflow
+
+```text
+                    ┌──────────────────┐
+                    │      START       │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Register Account │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ CAPTCHA Verify   │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │      Login       │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ File Complaint   │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Select Crime Type│
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Auto Severity    │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Upload Evidence  │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Priority Score   │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Police Dashboard │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │ Update Status    │
+                    └────────┬─────────┘
+                             ↓
+                    ┌──────────────────┐
+                    │    Analytics     │
+                    └──────────────────┘
+```
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| 🐍 Python 3 | Core programming language |
+| ⚡ Streamlit | Web application framework |
+| 📊 Plotly | Interactive charts |
+| 🐼 Pandas | Data processing |
+| 🔢 NumPy | Numerical calculations |
+| 💾 JSON | Local data storage |
+| 🔐 Hashlib | Password hashing |
+| 🔎 Regex | Input validation |
 
 ---
 
@@ -288,45 +336,35 @@ Cyber-Crime-Reporting-System/
 │
 ├── cybercrime.py
 ├── cybercrime_data.json
+├── requirements.txt
 ├── README.md
-└── requirements.txt
+└── screenshots/
+    ├── login.png
+    ├── registration.png
+    ├── complaint.png
+    ├── dashboard.png
+    └── analytics.png
 ```
-
-### `cybercrime.py`
-
-Main Python application containing:
-
-* User authentication
-* Registration
-* CAPTCHA
-* Complaint management
-* Admin dashboard
-* Analytics
-* Safety tips
-* Database operations
-
-### `cybercrime_data.json`
-
-Stores application data including:
-
-* Users
-* Complaints
-* Counters
-
-The application loads and saves this JSON file during operation.
 
 ---
 
-# 🚀 Installation & Setup
+# ⚙️ Installation
 
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/cyber-crime-reporting-system.git
+git clone https://github.com/your-username/cyber-crime-reporting-system.git
+```
+
+Go to the project directory:
+
+```bash
 cd cyber-crime-reporting-system
 ```
 
-## 2. Create a Virtual Environment
+---
+
+## 2. Create Virtual Environment
 
 ### macOS / Linux
 
@@ -355,7 +393,7 @@ numpy
 plotly
 ```
 
-Then install the dependencies:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -363,262 +401,147 @@ pip install -r requirements.txt
 
 ---
 
-## 4. Run the Application
+# ▶️ Run the Project
+
+Run the Streamlit application:
 
 ```bash
 streamlit run cybercrime.py
 ```
 
-The Streamlit application will open in your browser.
-
----
-
-# 🔑 Application Workflow
-
-```text
-                 ┌──────────────────┐
-                 │      Start       │
-                 └────────┬─────────┘
-                          ↓
-                 ┌──────────────────┐
-                 │ Login / Register │
-                 └────────┬─────────┘
-                          ↓
-                 ┌──────────────────┐
-                 │ CAPTCHA Verify   │
-                 └────────┬─────────┘
-                          ↓
-                ┌─────────┴─────────┐
-                ↓                   ↓
-        ┌──────────────┐    ┌──────────────┐
-        │   Citizen    │    │    Admin     │
-        └──────┬───────┘    └──────┬───────┘
-               ↓                   ↓
-       ┌───────────────┐    ┌───────────────┐
-       │ File Complaint│    │ All Complaints│
-       └───────┬───────┘    └───────┬───────┘
-               ↓                    ↓
-       ┌───────────────┐    ┌───────────────┐
-       │Auto Severity  │    │Assign Officer │
-       └───────┬───────┘    │ / Station     │
-               ↓             └───────┬───────┘
-       ┌───────────────┐             ↓
-       │Generate ID    │      ┌───────────────┐
-       └───────┬───────┘      │Update Status  │
-               ↓              └───────┬───────┘
-       ┌───────────────┐              ↓
-       │Track Complaint│      ┌───────────────┐
-       └───────────────┘      │   Analytics   │
-                              └───────────────┘
-```
+The application will open in your default web browser.
 
 ---
 
 # 💾 Data Storage
 
-This project uses a **JSON file as its local data store** instead of a traditional database.
+The project uses **JSON as a local database/storage mechanism**.
 
-The data structure contains:
+The JSON file stores information such as:
 
 ```text
-users
- ├── user_id
- ├── name
- ├── email
- ├── password_hash
- ├── mobile
- ├── gender
- ├── city
- ├── address
- └── role
-
-complaints
- ├── complaint_id
- ├── complaint_number
- ├── user_id
- ├── crime_type
- ├── description
- ├── location
- ├── date
- ├── latitude
- ├── longitude
- ├── financial_loss
- ├── severity
- ├── status
- ├── assigned_officer
- └── evidence_files
+Users
+Complaints
+Complaint Counter
 ```
 
-## The supplied project data follows this structure for users and complaints.
+Example structure:
 
-# 👥 User Roles
-
-## Citizen
-
-Citizens can:
-
-* Register
-* Login
-* Verify CAPTCHA
-* File cybercrime complaints
-* Upload evidence
-* View their complaints
-* Track complaint status
-* View cyber safety tips
-* Reset password
-
-## Admin
-
-Administrators can:
-
-* View all complaints
-* View citizen information
-* Filter complaints
-* Sort complaints
-* Assign officers
-* Assign police stations
-* Update complaint status
-* View analytics
-
-The application directs users to different dashboards according to their role.
-
----
-
-# 🎓 Educational Concepts Demonstrated
-
-This project demonstrates several Python programming concepts:
-
-* Variables and data types
-* Conditional statements
-* Loops
-* Functions
-* Classes and objects
-* Dataclasses
-* Lists and dictionaries
-* File handling
-* JSON
-* Exception handling
-* Regular expressions
-* Random functions
-* Date and time handling
-* Hashing
-* List comprehensions
-* Lambda functions
-* `Counter`
-* Pandas
-* NumPy
-* Data visualization
-* Streamlit UI development
-
----
-
-# 🔮 Future Scope
-
-The current project can be further enhanced with:
-
-* MySQL / PostgreSQL / MongoDB database
-* Real police department authentication
-* Email/SMS notifications
-* Real-time case tracking
-* AI-based cybercrime classification
-* Machine-learning-based fraud detection
-* OCR for evidence documents
-* Secure cloud file storage
-* Real Google Maps integration
-* Advanced role-based access control
-* Police investigation workflow
-* Automatic report generation
-* PDF complaint reports
-* Mobile application
-* Deployment on cloud platforms
-
----
-
-# ⚠️ Security Note
-
-This project is intended primarily for **educational and demonstration purposes**.
-
-For production deployment:
-
-* Use a production-grade database.
-* Use stronger password hashing such as Argon2 or bcrypt.
-* Never store real passwords or sensitive personal information in source-controlled JSON files.
-* Store secrets in environment variables.
-* Implement proper authorization and session security.
-* Validate and securely store uploaded files.
-* Use HTTPS.
-* Add audit logging.
-* Follow applicable privacy and cybersecurity regulations.
-
----
-
-# 📸 Project Highlights
-
-### Citizen Module
-
-```text
-Register → Login → CAPTCHA
-       ↓
-File Cyber Crime Complaint
-       ↓
-Automatic Severity
-       ↓
-Complaint ID Generated
-       ↓
-Track Complaint Status
+```json
+{
+    "users": [],
+    "complaints": [],
+    "counters": {}
+}
 ```
 
-### Admin Module
+For a production system, this can be replaced with:
+
+- MySQL
+- PostgreSQL
+- MongoDB
+- Firebase
+- Cloud Database
+
+---
+
+# 👥 Group Members
+
+| Name | Enrollment Number |
+|---|---|
+| **Patel Harshkumar Kanaiyalal** | 24002171710023 |
+| **Shah Ansh Shashinbhai** | 25002170420012 |
+| **Gediya Poojan Hareshbhai** | 24002170210025 |
+
+---
+
+# 🎓 Academic Project
+
+This project demonstrates practical knowledge of:
+
+- Python Programming
+- Object-Oriented Programming
+- File Handling
+- JSON Data Management
+- Authentication
+- Password Hashing
+- Regular Expressions
+- Streamlit
+- Data Visualization
+- Pandas
+- NumPy
+- Cybersecurity Concepts
+- Data Analysis
+- Algorithm Design
+
+---
+
+# 🚀 Future Enhancements
+
+The system can be improved by adding:
+
+- 🗄️ MySQL/PostgreSQL/MongoDB database
+- 🤖 AI-based cybercrime classification
+- 📧 Email notifications
+- 📱 SMS notifications
+- 📱 Mobile application
+- ☁️ Cloud deployment
+- 🗺️ Google Maps API
+- 🔔 Real-time notifications
+- 📄 PDF complaint generation
+- 📈 Advanced crime prediction
+- 🔍 AI-based evidence analysis
+- 👮 Multiple police department roles
+- 🔒 Multi-factor authentication
+- 🌐 REST API integration
+
+---
+
+# ⚠️ Disclaimer
+
+This project is developed for **educational and academic purposes**.
+
+It is not intended to replace official government or police cybercrime reporting systems.
+
+For real-world deployment, additional security, privacy, authentication, database, audit logging, and legal compliance mechanisms should be implemented.
+
+---
+
+# ⭐ Project Highlights
 
 ```text
-Admin Login
-    ↓
-All Complaints
-    ↓
-Filter / Sort
-    ↓
-Review Citizen Details
-    ↓
-Assign Officer / Station
-    ↓
-Update Status
-    ↓
-View Analytics
+✅ Cyber Crime Reporting
+✅ User Registration & Login
+✅ CAPTCHA Verification
+✅ Password Hashing
+✅ Unique Complaint IDs
+✅ Automatic Severity
+✅ Smart Priority Algorithm
+✅ Evidence Upload
+✅ GPS Location
+✅ Police Dashboard
+✅ Case Status Management
+✅ Interactive Analytics
+✅ Plotly Visualizations
+✅ JSON Data Storage
 ```
 
 ---
 
-# 👨‍💻 Author
+# 📜 License
 
-**Harsh Patel**
+This project is created for educational purposes.
 
-* B.Tech / Engineering Student
-* Python Developer
-* Full Stack Development Learner
-* Interested in Web Development, Python and Cybersecurity
+You may modify and extend it for academic learning and portfolio purposes.
 
 ---
 
-# 📄 Project Information
+## 👨‍💻 Developed By
 
-**Project Name:** Cyber Crime Reporting and Analysis System
+**Patel Harshkumar Kanaiyalal**  
+**Shah Ansh Shashinbhai**  
+**Gediya Poojan Hareshbhai**
 
-**Type:** Academic / Educational Project
+### 🛡️ Cyber Crime Reporting and Analysis System
 
-**Language:** Python
-
-**Framework:** Streamlit
-
-**Data Storage:** JSON
-
-**Visualization:** Plotly
-
-**Application:** Web-based Cyber Crime Reporting & Analysis
-
----
-
-# ⭐ Acknowledgement
-
-This project was developed as an academic project to demonstrate Python programming, Streamlit application development, data management, authentication, visualization, and cybersecurity-related concepts.
-
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+> **Report. Track. Analyze. Protect.**
